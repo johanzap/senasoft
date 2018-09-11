@@ -3,10 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule }  from './app-routing.module';
 import { routes } from '../routes/routes';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from '../auth/auth-guard.service';
-
-
 import { AppComponent } from './app.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { PedidosModule } from './pedidos/pedidos.module';
@@ -33,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     MarcasModule,
     TipoProductoModule,
     PagosModule,
-    AgenciaPaqueteriaModule
+    AgenciaPaqueteriaModule,
     LoginModule,
     ReactiveFormsModule,
     HttpClientModule

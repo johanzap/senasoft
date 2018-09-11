@@ -2,8 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {SERVER_API_URL} from '../app.constans';
-import 'rxjs/add/operator/map';
-
+import { map } from 'rxjs/operators';
 const options = {
   headers: new HttpHeaders({'Content-type': 'application/json'}),
   'observe': 'response' as 'body'
@@ -21,8 +20,11 @@ export class UsuariosService {
       return this.http.get(this.resourceUrl, options);
     }
 
-    crearUsuario(usuario: any) {
-      return this.http.post(this.resourceUrl, usuario);
+    crearUsuario(usuario: { [key: string]: any }): Observable<HttpResponse<{ [key: string]: any }>> {
+      return this.http.post(this.resourceUrl, usuario, options)
+        .pipe(
+          map((response: HttpResponse<{ [key: string]: any }>) => { return response; })
+        )
     }
 
 }

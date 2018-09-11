@@ -1,23 +1,18 @@
-<section>
-  <div class="">
-    <p>Nombre completo</p>
-    <input type="text" name="" [(ngModel)]="nombre" value="">
+<div>
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
-  <div class="">
-    <p>Email</p>
-    <input type="text" name="" [(ngModel)]="email" value="">
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-  <div class="">
-    <p>Numero de documento</p>
-    <input type="text" name="" [(ngModel)]="identidad" value="">
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <div class="">
-    <p>Telefono</p>
-    <input type="text" name="" [(ngModel)]="telefono" value="">
-  </div>
-  <div class="">
-    <p>Contraseña</p>
-    <input type="text" name="" [(ngModel)]="password" value="">
-  </div>
-  <button type="button" (click)="crearUsuario()" name="button">crear</button>
-</section>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

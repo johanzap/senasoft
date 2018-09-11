@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { UsuariosService } from '../usuarios.service';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {  HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-usuarios-create',
@@ -9,14 +9,10 @@ import { UsuariosService } from '../usuarios.service';
   styleUrls: ['./usuarios-create.component.css']
 })
 export class UsuariosCreateComponent implements OnInit {
-  identidad: any;
-  telefono: any;
-  password: any;
-  nombre: any;
-  email: any;
-
+  form: FormGroup;
   constructor(
-    private usuariosService: UsuariosService
+    private usuariosService: UsuariosService,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
@@ -27,21 +23,19 @@ export class UsuariosCreateComponent implements OnInit {
     )
   }
 
-  crearUsuario() {
-    const user = {
-      nombre: this.nombre,
-      email: this.email,
-      identidad: this.identidad,
-      telefono: this.telefono,
-      password: this.password
-    };
+  buildForm() {
+    this.form = this.fb.group({
+      
+    })
+  }
 
-    this.usuariosService.crearUsuario(user).subscribe(
-      res => {
-        console.log('creaddddddo');
-      }
-    );
-
+  crearUsuario(usuario: { [key: string]: any }) {
+    this.usuariosService.crearUsuario(usuario)
+      .subscribe((response: HttpResponse<{ [key: string]: any }>) => {
+        console.log(response);
+      }, (response: HttpErrorResponse) => {
+        console.error(response);
+      })
   }
 
 }
