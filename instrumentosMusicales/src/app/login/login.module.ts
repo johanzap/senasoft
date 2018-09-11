@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
+import { JwtHelper } from 'angular2-jwt';
 
 @NgModule({
   imports: [
@@ -10,7 +11,7 @@ import { AuthService } from '../../auth/auth.service';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ AuthService ],
+  providers: [ AuthService, JwtHelper ],
   declarations: [LoginComponent]
 })
 export class LoginModule { }

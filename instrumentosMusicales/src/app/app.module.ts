@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule }  from './app-routing.module';
 import { routes } from '../routes/routes';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '../auth/auth-guard.service';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
