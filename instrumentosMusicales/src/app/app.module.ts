@@ -17,7 +17,6 @@ import { PagosModule } from './pagos/pagos.module';
 import { AgenciaPaqueteriaModule } from './agencia-paqueteria/agencia-paqueteria.module';
 import { LoginModule } from './login/login.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     MarcasModule,
     TipoProductoModule,
     PagosModule,
-    AgenciaPaqueteriaModule
+    AgenciaPaqueteriaModule,
     LoginModule,
     ReactiveFormsModule,
     HttpClientModule
