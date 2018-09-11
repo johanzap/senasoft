@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule }  from './app-routing.module';
 import { routes } from '../routes/routes';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from '../auth/auth-guard.service';
 
 
 import { AppComponent } from './app.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
 import { PedidosModule } from './pedidos/pedidos.module';
 import { ProductosModule } from './productos/productos.module';
 import { MarcasModule } from './marcas/marcas.module';
@@ -20,7 +22,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
