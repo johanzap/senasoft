@@ -1,3 +1,23 @@
-<p>
-  usuarios-create works!
-</p>
+<section>
+  <div class="">
+    <p>Nombre completo</p>
+    <input type="text" name="" [(ngModel)]="nombre" value="">
+  </div>
+  <div class="">
+    <p>Email</p>
+    <input type="text" name="" [(ngModel)]="email" value="">
+  </div>
+  <div class="">
+    <p>Numero de documento</p>
+    <input type="text" name="" [(ngModel)]="identidad" value="">
+  </div>
+  <div class="">
+    <p>Telefono</p>
+    <input type="text" name="" [(ngModel)]="telefono" value="">
+  </div>
+  <div class="">
+    <p>Contraseña</p>
+    <input type="text" name="" [(ngModel)]="password" value="">
+  </div>
+  <button type="button" (click)="crearUsuario()" name="button">crear</button>
+</section>
