@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { UsuariosService } from '../usuarios.service';
-
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {  HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-usuarios-create',
@@ -9,17 +9,14 @@ import { UsuariosService } from '../usuarios.service';
   styleUrls: ['./usuarios-create.component.css']
 })
 export class UsuariosCreateComponent implements OnInit {
-  identidad: any;
-  telefono: any;
-  password: any;
-  nombre: any;
-  email: any;
-
+  form: FormGroup;
   constructor(
-    private usuariosService: UsuariosService
+    private usuariosService: UsuariosService,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.buildForm();
     this.usuariosService.getUsuarios().subscribe(
       (res) => {
         console.log('users', res);
@@ -27,21 +24,42 @@ export class UsuariosCreateComponent implements OnInit {
     )
   }
 
-  crearUsuario() {
-    const user = {
-      nombre: this.nombre,
-      email: this.email,
-      identidad: this.identidad,
-      telefono: this.telefono,
-      password: this.password
-    };
+  buildForm() {
+    this.form = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', Validators.required],
+      telefono: ['', Validators.required],
+      identidad: ['', Validators.required],
+      password: ['', Validators.required],
+      confirm_password: ['', Validators.required]
+    }, {
+      validator: this.myCustomValidators()
+    });
 
-    this.usuariosService.crearUsuario(user).subscribe(
-      res => {
-        console.log('creaddddddo');
-      }
-    );
+    this.form.get('confirm_password').valueChanges
+    .subscribe((val) => {
+      console.log(this.form);
+    })
+  }
 
+  myCustomValidators() {
+    return (group: FormGroup): { [key: string]: any } => {
+      if (group.controls.password.value.length > 0 && group.controls.confirm_password.value.length > 0
+          && group.controls.password.value !== group.controls.confirm_password.value) {
+            return {
+              paswordNotEquals: true
+            }
+          }
+    }
+  }
+
+  crearUsuario(usuario: { [key: string]: any }) {
+    this.usuariosService.crearUsuario(usuario)
+      .subscribe((response: HttpResponse<{ [key: string]: any }>) => {
+        console.log(response);
+      }, (response: HttpErrorResponse) => {
+        console.error(response);
+      })
   }
 
 }
