@@ -1,20 +1,106 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<app-navbar></app-navbar>
+<app-carousel></app-carousel>
 
+<!--Texto descripcion-->
+<section>
+  <div class="text-descripcion">
+    <h3 class="text-center p-5 bg-light lead">"Los productos más exclusivos, a buen precio, a la puerta de tu casa y a tan solo un clic"</h3>
+  </div>
+</section>
+
+<!--Seccion de categorias-->
+<section>
+  <div class="contenedor-categorias" id="productos">
+    <h3 class="text-center p-3 bg-white">Categorias</h3>
+    <div class="row">
+      <div class="col-md-4 w-100 m-0 p-5 category-1">
+        <h2>Guitarras</h2>
+      </div>
+      <div class="col-md-4 w-100 p-5 category-2">
+        <h2>Otros Intrumentos</h2>
+      </div>
+      <div class="col-md-4 w-100 p-5 category-3">
+        <h2>Accesorios</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Seccion de prodcutos-->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 p-5">
+        <div class="card">
+          <div class="card-body">
+            <img class="img-thumbnail" src="https://www.klavier.es/3007-large_default/guitarra-valencia-vc-204-44-antique-natural.jpg">
+            <h5 class="card-title text-center">Guitarra Eléctrica</h5>
+            <p class="card-text text-center">Yamaha</p>
+            <h4 class="card-title text-center">$2'520.350</h4>
+            <p class="card-text text-center">Cod. 123456</p>
+          </div>
+          <div class="card-footer card-carrito">
+            <button class="btn btn-outline-secondary">Añadir a carrito</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 p-5">
+          <div class="card">
+            <div class="card-body">
+              <img class="img-thumbnail" src="https://www.klavier.es/3007-large_default/guitarra-valencia-vc-204-44-antique-natural.jpg">
+              <h5 class="card-title text-center">Guitarra Eléctrica</h5>
+              <p class="card-text text-center">Yamaha</p>
+              <h4 class="card-title text-center">$2'520.350</h4>
+              <p class="card-text text-center">Cod. 123456</p>
+            </div>
+            <div class="card-footer card-carrito">
+              <button class="btn btn-outline-secondary">Añadir a carrito</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-5">
+            <div class="card">
+              <div class="card-body">
+                <img class="img-thumbnail" src="https://www.klavier.es/3007-large_default/guitarra-valencia-vc-204-44-antique-natural.jpg">
+                <h5 class="card-title text-center">Guitarra Eléctrica</h5>
+                <p class="card-text text-center">Yamaha</p>
+                <h4 class="card-title text-center">$2'520.350</h4>
+                <p class="card-text text-center">Cod. 123456</p>
+              </div>
+              <div class="card-footer card-carrito">
+                <button class="btn btn-outline-secondary">Añadir a carrito</button>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</section>
+
+<!--Contacto-->
+<!--Seccion contacto-->
+<section id="contacto">
+    <!--Titulo contacto-->
+    <h3 style="text-align: center; margin-top: 1.5em; margin-bottom: 1em;">Contáctenos</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 p-3">
+          <h5 style="text-align: center; margin-top: .5em; margin-bottom: 1em;">Nuestra Ubicación</h5>
+          <img src="https://cdn.shopify.com/s/files/1/0339/7965/products/pama-mapa-z_grande.jpeg?v=1389258340">
+        </div>
+        <div class="col-md-6">
+          <h5 style="text-align: center; margin-top: .5em; margin-bottom: 1em;">Escríbenos</h5>
+          <form >
+            <input type="text" name="" placeholder="Asunto" class="form-control" style="margin-bottom: 1em;">
+            <input type="text" name="" placeholder="Nombres" class="form-control" style="margin-bottom: 1em;">
+            <input type="text" name="" placeholder="Correo" class="form-control" style="margin-bottom: 1em;">
+            <input type="text" name="" placeholder="Teléfono" class="form-control" style="margin-bottom: 1em;">
+            <textarea class="form-control" placeholder="Mensaje" style="margin-bottom: 1em;" rows="5"></textarea>
+            <button class="btn btn-primary" style="float: right;">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--Footer-->
+<app-footer></app-footer>

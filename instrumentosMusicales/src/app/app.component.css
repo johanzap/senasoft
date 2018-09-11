@@ -1,0 +1,20 @@
+.category-1, .category-2, .category-3{
+    text-align: center;
+    color: white
+}
+
+.category-1 {
+    background-color: darkgray;
+}
+
+.category-2{
+    background-color: grey;
+}
+
+.category-3{
+    background-color:#524d4c;
+}
+
+.card-carrito{
+    margin: auto;
+}
