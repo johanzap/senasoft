@@ -1,5 +1,5 @@
 .list-navbar{
-	margin-left:13em;
+	margin-left:20%;
 }
 
 .musica{
@@ -19,4 +19,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@media screen and (max-width:768px){
+		.list-navbar{
+		margin-left:0%;
+		justify-content: center;
+	}
 }
