@@ -4,6 +4,8 @@ import { AppRoutingModule }  from './app-routing.module';
 import { routes } from '../routes/routes';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth/auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 import { AppComponent } from './app.component';
