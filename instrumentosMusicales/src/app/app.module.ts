@@ -4,6 +4,7 @@ import { AppRoutingModule }  from './app-routing.module';
 import { routes } from '../routes/routes';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from '../auth/auth-guard.service';
 
 
 import { AppComponent } from './app.component';
@@ -14,7 +15,9 @@ import { MarcasModule } from './marcas/marcas.module';
 import { TipoProductoModule } from './tipo-producto/tipo-producto.module';
 import { PagosModule } from './pagos/pagos.module';
 import { AgenciaPaqueteriaModule } from './agencia-paqueteria/agencia-paqueteria.module';
-
+import { LoginModule } from './login/login.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,11 @@ import { AgenciaPaqueteriaModule } from './agencia-paqueteria/agencia-paqueteria
     TipoProductoModule,
     PagosModule,
     AgenciaPaqueteriaModule
+    LoginModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
