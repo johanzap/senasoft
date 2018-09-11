@@ -25,7 +25,7 @@ export class UsuariosCreateComponent implements OnInit {
 
   buildForm() {
     this.form = this.fb.group({
-      
+      email: ['']
     })
   }
 
