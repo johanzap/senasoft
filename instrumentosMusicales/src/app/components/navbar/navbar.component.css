@@ -1,0 +1,22 @@
+.list-navbar{
+	margin-left:13em;
+}
+
+.musica{
+	color: #fff;
+	font-size: 22px;
+	margin-left: .2em;
+}
+
+.carrito{
+	font-size:28px;
+	color: #fff;
+	text-decoration: none;
+	margin-right: .5em;
+}
+
+.buttons-options{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
