@@ -16,6 +16,7 @@ export class UsuariosCreateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.buildForm();
     this.usuariosService.getUsuarios().subscribe(
       (res) => {
         console.log('users', res);
@@ -25,8 +26,31 @@ export class UsuariosCreateComponent implements OnInit {
 
   buildForm() {
     this.form = this.fb.group({
-      email: ['']
+      nombre: ['', Validators.required],
+      email: ['', Validators.required],
+      telefono: ['', Validators.required],
+      identidad: ['', Validators.required],
+      password: ['', Validators.required],
+      confirm_password: ['', Validators.required]
+    }, {
+      validator: this.myCustomValidators()
+    });
+
+    this.form.get('confirm_password').valueChanges
+    .subscribe((val) => {
+      console.log(this.form);
     })
+  }
+
+  myCustomValidators() {
+    return (group: FormGroup): { [key: string]: any } => {
+      if (group.controls.password.value.length > 0 && group.controls.confirm_password.value.length > 0
+          && group.controls.password.value !== group.controls.confirm_password.value) {
+            return {
+              paswordNotEquals: true
+            }
+          }
+    }
   }
 
   crearUsuario(usuario: { [key: string]: any }) {

@@ -4,6 +4,7 @@ import { AppRoutingModule }  from './app-routing.module';
 import { routes } from '../routes/routes';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth/auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -17,7 +18,6 @@ import { PagosModule } from './pagos/pagos.module';
 import { AgenciaPaqueteriaModule } from './agencia-paqueteria/agencia-paqueteria.module';
 import { LoginModule } from './login/login.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
